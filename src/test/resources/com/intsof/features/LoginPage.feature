@@ -3,17 +3,6 @@ Feature: Login Page Feature
   As a registered user
   I should be able to login to Aires application
 
-  Scenario: Validating Login page title
-    Given user is on Aires application login page
-    When user gets the title of the page
-    Then page title should be "MobilityX 5.6.4 (07-21-2020)"
-
-  Scenario: Validate Forgot password link
-    Given user is on Aires application login page
-    When user enters UserName "rohit.sharma@intsof.com"
-    And user clicks on Next button
-    Then forgot password link should be displayed
-
   @Smoke
   Scenario Outline: Validating Login functionality with valid credential
     Given user is on Aires application login page
@@ -44,6 +33,17 @@ Feature: Login Page Feature
       | rohit.sharma@intsof.com | InvalidPassword |
       | Invalid.user@intsof.com | relonetng1      |
       | admin                   | admin           |
+
+  Scenario: Validating Login page title
+    Given user is on Aires application login page
+    When user gets the title of the page
+    Then page title should be "MobilityX 5.6.4 (07-21-2020)"
+
+  Scenario: Validate Forgot password link
+    Given user is on Aires application login page
+    When user enters UserName "rohit.sharma@intsof.com"
+    And user clicks on Next button
+    Then forgot password link should be displayed
 
   Scenario: Validating Login functionality with Blank Username
     Given user is on Aires application login page
